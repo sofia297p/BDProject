@@ -1,0 +1,47 @@
+﻿<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Birthdate</th>
+            <th scope="col">Sex</th>
+            <th scope="col">Email</th>
+            <th scope="col">Password</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Person person in Model)
+        {
+            <tr>
+                <td>
+                    @person.Id
+                </td>
+                <td>
+                    @person.Name
+                </td>
+                <td>
+                    @person.Surname
+                </td>
+                <td>
+                    @person.Birthdate
+                </td>
+                <td>
+                    @person.Sex
+                </td>
+                <td>
+                    @person.Email
+                </td>
+                <td>
+                    @person.Password
+                </td>
+                <td>
+                    <a class="btn btn-primary" asp-controller="Alcoholic" asp-action="Update" asp-route-myParam="@person.Id">Update</a>
+                </td>
+                <td>
+                    <a class="btn btn-primary" asp-controller="Alcoholic" asp-action="Delete" asp-route-id="@person.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
