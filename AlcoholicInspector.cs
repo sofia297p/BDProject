@@ -8,7 +8,7 @@ namespace Sanatorium
         public int Id { get; set; }
         public int? InspectorId { get; set; }
         public int? AlcoholicId { get; set; }
-        public DateOnly? Date { get; set; }
+        public DateTime? Date { get; set; }
         public int? State { get; set; }
 
         public virtual Alcoholic? Alcoholic { get; set; }

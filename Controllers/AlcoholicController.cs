@@ -22,6 +22,7 @@ namespace Sanatorium.Controllers
                          select person;
 
            var alcoholics = result.ToList();
+           
 
             return View(alcoholics);
 

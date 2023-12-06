@@ -15,6 +15,10 @@ namespace Sanatorium
             : base(options)
         {
         }
+        static sanatoriumContext()
+        {
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+        }
 
         public virtual DbSet<Alcoholic> Alcoholics { get; set; } = null!;
         public virtual DbSet<AlcoholicInspector> AlcoholicInspectors { get; set; } = null!;
