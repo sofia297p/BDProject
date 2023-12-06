@@ -44,6 +44,11 @@ namespace Sanatorium.Controllers
         }
 
         [HttpPost]
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
         public IActionResult Create(Person person)
         {
             _db.People.Add(person);
