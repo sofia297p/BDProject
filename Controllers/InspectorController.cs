@@ -43,7 +43,6 @@ namespace Sanatorium.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        [HttpPost]
         public IActionResult Create()
         {
             return View();
