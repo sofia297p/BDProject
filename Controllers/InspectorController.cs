@@ -43,7 +43,6 @@ namespace Sanatorium.Controllers
             return RedirectToAction(nameof(Index));
         }
         
-        [HttpPost]
         public IActionResult Create()
         {
             return View();
@@ -52,8 +51,37 @@ namespace Sanatorium.Controllers
         public IActionResult Create(Person person)
         {
             _db.People.Add(person);
+
+            _db.SaveChanges();
+            var inspector= new Inspector
+            {
+
+                UserId = person.Id,
+            };
+
+            _db.Inspectors.Add(inspector);
             _db.SaveChanges();
             return RedirectToAction(nameof(Index));
         }
+        public IActionResult Delete(int id)
+        {
+            var person = _db.People.FirstOrDefault(c => c.Id == id);
+            return View(person);
+        }
+
+        [HttpPost]
+        public IActionResult DeleteConfirmed(int id)
+        {
+            var person = _db.People.FirstOrDefault(c => c.Id == id);
+            if (person != null)
+            {
+                _db.People.Remove(person);
+                _db.SaveChanges();
+            }
+            return RedirectToAction(nameof(Index));
+        }
+
+
     }
 }
+

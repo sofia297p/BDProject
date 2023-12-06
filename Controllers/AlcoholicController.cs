@@ -66,5 +66,23 @@ namespace Sanatorium.Controllers
             _db.SaveChanges();
             return RedirectToAction(nameof(Index));
         }
+
+        public IActionResult Delete(int id)
+        {
+            var person = _db.People.FirstOrDefault(c => c.Id == id);
+            return View(person);
+        }
+
+        [HttpPost]
+        public IActionResult DeleteConfirmed(int id)
+        {
+            var person = _db.People.FirstOrDefault(c => c.Id == id);
+            if (person != null)
+            {
+                _db.People.Remove(person);
+                _db.SaveChanges();
+            }
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
