@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Sanatorium.Controllers
 {
-    public class InspectorController1 : Controller
+    public class InspectorController : Controller
     {
         private readonly sanatoriumContext _db;
 
 
-        public InspertorController(sanatoriumContext db)
+        public InspectorController(sanatoriumContext db)
         {
             _db = db;
         }
