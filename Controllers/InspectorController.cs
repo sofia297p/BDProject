@@ -23,8 +23,8 @@ namespace Sanatorium.Controllers
                          join alcoholic in _db.Alcoholics on person.Id equals alcoholic.UserId
                          select person;
 
-            List<Person> inspertors = result.ToList();
-            return View(inspertors);
+            List<Person> inspeсtors = result.ToList();
+            return View(inspeсtors);
 
 
         }
