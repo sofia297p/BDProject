@@ -10,7 +10,7 @@ namespace Sanatorium.Controllers
     {
         private readonly sanatoriumContext _db;
 
-
+        
         public InspectorController(sanatoriumContext db)
         {
             _db = db;
@@ -20,7 +20,7 @@ namespace Sanatorium.Controllers
         public IActionResult Index()
         {
             var result = from person in _db.People
-                         join alcoholic in _db.Alcoholics on person.Id equals alcoholic.UserId
+                         join inspector in _db.Inspectors on person.Id equals inspector.UserId
                          select person;
 
             List<Person> inspeсtors = result.ToList();
