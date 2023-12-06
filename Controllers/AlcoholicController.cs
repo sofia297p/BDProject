@@ -21,7 +21,7 @@ namespace Sanatorium.Controllers
                          join alcoholic in _db.Alcoholics on person.Id equals alcoholic.UserId
                          select person;
 
-           var alcoholics = result.ToList();
+           List<Person> alcoholics = result.ToList();
 
             return View(alcoholics);
 
