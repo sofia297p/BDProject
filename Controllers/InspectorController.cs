@@ -42,7 +42,8 @@ namespace Sanatorium.Controllers
             _db.SaveChanges();
             return RedirectToAction(nameof(Index));
         }
-
+        
+        [HttpPost]
         public IActionResult Create()
         {
             return View();

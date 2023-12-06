@@ -41,7 +41,7 @@ namespace Sanatorium.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        [HttpPost]
+      
         public IActionResult Create()
         {
             return View();
@@ -52,6 +52,17 @@ namespace Sanatorium.Controllers
         public IActionResult Create(Person person)
         {
             _db.People.Add(person);
+            
+            _db.SaveChanges();
+            var alcoholic = new Alcoholic
+            {
+               
+                UserId = person.Id,
+                Consciousness = true
+            };
+
+            // Додати алкоголіка до таблиці Alcoholics
+            _db.Alcoholics.Add(alcoholic);
             _db.SaveChanges();
             return RedirectToAction(nameof(Index));
         }
