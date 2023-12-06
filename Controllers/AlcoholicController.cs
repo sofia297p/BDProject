@@ -22,7 +22,7 @@ namespace Sanatorium.Controllers
                          select person;
 
            List<Person> alcoholics = result.ToList();
-
+            int a = 12;
             return View(alcoholics);
 
         }
