@@ -73,11 +73,15 @@ namespace Sanatorium.Controllers
         public IActionResult DeleteConfirmed(int id)
         {
             var person = _db.People.FirstOrDefault(c => c.Id == id);
-            if (person != null)
-            {
-                _db.People.Remove(person);
-                _db.SaveChanges();
-            }
+
+
+            var alcoholics = _db.Alcoholics.Where(a => a.UserId == id);
+            _db.Alcoholics.RemoveRange(alcoholics);
+
+
+            _db.People.Remove(person);
+            _db.SaveChanges();
+
             return RedirectToAction(nameof(Index));
         }
 

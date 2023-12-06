@@ -61,7 +61,7 @@ namespace Sanatorium.Controllers
                 Consciousness = true
             };
 
-            // Додати алкоголіка до таблиці Alcoholics
+           
             _db.Alcoholics.Add(alcoholic);
             _db.SaveChanges();
             return RedirectToAction(nameof(Index));
@@ -77,11 +77,15 @@ namespace Sanatorium.Controllers
         public IActionResult DeleteConfirmed(int id)
         {
             var person = _db.People.FirstOrDefault(c => c.Id == id);
-            if (person != null)
-            {
-                _db.People.Remove(person);
-                _db.SaveChanges();
-            }
+
+            // Видалення пов'язаних записів в таблиці "alcoholic"
+            var alcoholics = _db.Alcoholics.Where(a => a.UserId == id);
+            _db.Alcoholics.RemoveRange(alcoholics);
+
+            // Видалення запису "person"
+            _db.People.Remove(person);
+            _db.SaveChanges();
+
             return RedirectToAction(nameof(Index));
         }
     }
