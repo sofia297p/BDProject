@@ -1,4 +1,12 @@
-﻿<table class="table">
+﻿@model List<Sanatorium.Person>
+
+@{
+    ViewData["Title"] = "GetAlcoholicsForInspectorTimesPutInBed";
+}
+
+<h1>Get all Alcoholics for Inspector who he took at least N Times</h1>
+
+<table class="table">
     <thead>
         <tr>
             <th scope="col">ID</th>
@@ -43,10 +51,14 @@
                 </td>
             </tr>
         }
-          <tr>
+        <tr>
             <td>
                  <a class="btn btn-success" asp-controller="Inspector" asp-action="Add">Add</a>
             </td>
         </tr>
     </tbody>
 </table>
+
+<div>
+    <a asp-action="Index">Back to Queries</a>
+</div>

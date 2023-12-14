@@ -1,0 +1,50 @@
+﻿@model List<Sanatorium.AlcoholicInspector>
+
+@{
+    ViewData["Title"] = "GetAllPairsForInspectorAndAlcoholic";
+}
+
+<h1>Get all Pairs for Inspector and Alcoholic</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Inspector Id</th>
+            <th scope="col">AlcoholicI d</th>
+            <th scope="col">Date</th>
+            <th scope="col">State</th>
+            <th scope="col">BedId</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (AlcoholicInspector pair in Model)
+        {
+            <tr>
+                <td>
+                    @pair.Id
+                </td>
+                <td>
+                    @pair.InspectorId
+                </td>
+                <td>
+                    @pair.AlcoholicId
+                </td>
+                <td>
+                    @pair.Date
+                </td>
+                <td>
+                    @pair.State
+                </td>
+                <td>
+                    @pair.BedId
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <a asp-action="Index">Back to Queries</a>
+</div>
+

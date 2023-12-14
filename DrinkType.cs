@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Sanatorium
+﻿namespace Sanatorium
 {
     public partial class DrinkType
     {

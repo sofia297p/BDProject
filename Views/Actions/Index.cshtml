@@ -1,0 +1,109 @@
+﻿@model QueryModel
+<h1>Actions:</h1>
+    <h2><p>Put alcoholic in Bed</p></h2>
+<form asp-action="PutAlcoholicInBed">
+    <fieldset>
+        <div class="form-group">
+            <label asp-for="InspectorId" class="control-label"></label>
+            <input value="0" asp-for="@Model.InspectorId" class="form-control" />
+            <span asp-validation-for="InspectorId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="AlcoholicId" class="control-label"></label>
+            <input value="0" asp-for="@Model.AlcoholicId" class="form-control" />
+            <span asp-validation-for="AlcoholicId" class="text-danger"></span>
+        </div>
+       
+        <div class="form-group">
+            <label asp-for="BedId" class="control-label"></label>
+            <input value="0" asp-for="@Model.BedId" class="form-control" />
+            <span asp-validation-for="BedId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </fieldset>
+</form><br/>
+    <h2><p>Release alcoholic from Bed</p></h2>
+
+<form asp-action="ReleaseAlcoholicInBed">
+    <fieldset>
+        <div class="form-group">
+            <label asp-for="InspectorId" class="control-label"></label>
+            <input value="0" asp-for="@Model.InspectorId" class="form-control" />
+            <span asp-validation-for="InspectorId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="AlcoholicId" class="control-label"></label>
+            <input value="0" asp-for="@Model.AlcoholicId" class="form-control" />
+            <span asp-validation-for="AlcoholicId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="BedId" class="control-label"></label>
+            <input value="0" asp-for="@Model.BedId" class="form-control" />
+            <span asp-validation-for="BedId" class="text-danger"></span>
+        </div>
+        <p></p>
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </fieldset>
+</form><br/>
+    <h2><p>Escape alcoholic from Bed</p></h2>
+
+<form asp-action="EscapeAlcoholicFromBed">
+    <fieldset>
+        <div class="form-group">
+            <label asp-for="InspectorId" class="control-label"></label>
+            <input value="0" asp-for="@Model.InspectorId" class="form-control" />
+            <span asp-validation-for="InspectorId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="AlcoholicId" class="control-label"></label>
+            <input value="0" asp-for="@Model.AlcoholicId" class="form-control" />
+            <span asp-validation-for="AlcoholicId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="BedId" class="control-label"></label>
+            <input value="0" asp-for="@Model.BedId" class="form-control" />
+            <span asp-validation-for="BedId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </fieldset>
+</form><br/>
+<h2><p>Drink</p></h2>
+<form asp-action="Drink">
+    <fieldset>
+        <div class="form-group">
+            <label asp-for="DrinkId" class="control-label"></label>
+            <input value="0" asp-for="@Model.DrinkId" class="form-control" />
+            <span asp-validation-for="DrinkId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <b>!Important! Add alcoholic ids through coma!!!</b>
+            <label asp-for="AlcoholicIds" class="control-label"></label>
+            <input value="" asp-for="@Model.AlcoholicIds" class="form-control" />
+            <span asp-validation-for="AlcoholicIds" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </fieldset>
+</form><br/>
+
+<h2><p>Lost Consciousness</p></h2>
+<form asp-action="LostConsciousness">
+    <fieldset>
+        <div class="form-group">
+            <label asp-for="AlcoholicId" class="control-label"></label>
+            <input value="0" asp-for="@Model.AlcoholicId" class="form-control" />
+            <span asp-validation-for="AlcoholicId" class="text-danger"></span>
+        </div>
+        <p>Lost Consciousness</p>
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </fieldset>
+</form><br/>

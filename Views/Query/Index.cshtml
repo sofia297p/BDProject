@@ -1,0 +1,184 @@
+﻿@model QueryModel
+<h1>Queries</h1>
+
+<form asp-action="GetAlcoholicsInspectors">
+    <fieldset>
+        <div class="form-group">
+            <label asp-for="AlcoholicId" class="control-label"></label>
+            <input value="0" asp-for="@Model.AlcoholicId" class="form-control" />
+            <span asp-validation-for="AlcoholicId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Times" class="control-label"></label>
+            <input value="0" asp-for="@Model.Times" class="form-control" />
+            <span asp-validation-for="Times" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="BedId" class="control-label"></label>
+            <input value="0" asp-for="@Model.BedId" class="form-control" />
+            <span asp-validation-for="BedId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="From" class="control-label"></label>
+            <input value="" asp-for="@Model.From" class="form-control" />
+            <span asp-validation-for="From" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="To" class="control-label"></label>
+            <input value="" asp-for="@Model.To" class="form-control" />
+            <span asp-validation-for="To" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Get all inspectors for alcoholic who took him at least once" class="btn btn-primary" />
+        </div>
+    </fieldset>
+</form>
+    <br/>
+<form asp-action="GetAlcoholicsBeds">
+    <fieldset>
+        <div class="form-group">
+            <label asp-for="AlcoholicId" class="control-label"></label>
+            <input value="0" asp-for="@Model.AlcoholicId" class="form-control" />
+            <span asp-validation-for="AlcoholicId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="From" class="control-label"></label>
+            <input value="" asp-for="@Model.From" class="form-control" />
+            <span asp-validation-for="From" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="To" class="control-label"></label>
+            <input value="" asp-for="@Model.To" class="form-control" />
+            <span asp-validation-for="To" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Get all beds for alcoholic, where he layed at least once" class="btn btn-primary" />
+        </div>
+    </fieldset>
+</form>
+
+<form asp-action="GetAlcoholicsForInspectorTimesPutInBed">
+    <fieldset>
+        <div class="form-group">
+            <label asp-for="InspectorId" class="control-label"></label>
+            <input value="0" asp-for="@Model.InspectorId" class="form-control" />
+            <span asp-validation-for="InspectorId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Times" class="control-label"></label>
+            <input value="0" asp-for="@Model.Times" class="form-control" />
+            <span asp-validation-for="Times" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="From" class="control-label"></label>
+            <input value="" asp-for="@Model.From" class="form-control" />
+            <span asp-validation-for="From" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="To" class="control-label"></label>
+            <input value="" asp-for="@Model.To" class="form-control" />
+            <span asp-validation-for="To" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Get all Alcoholics for Inspector who he took at least N Times" class="btn btn-primary" />
+        </div>
+    </fieldset>
+</form>
+
+<form asp-action="GetAlcoholicsEscapedBeds">
+    <fieldset>
+        <div class="form-group">
+            <label asp-for="AlcoholicId" class="control-label"></label>
+            <input value="0" asp-for="@Model.AlcoholicId" class="form-control" />
+            <span asp-validation-for="AlcoholicId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="From" class="control-label"></label>
+            <input value="" asp-for="@Model.From" class="form-control" />
+            <span asp-validation-for="From" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="To" class="control-label"></label>
+            <input value="" asp-for="@Model.To" class="form-control" />
+            <span asp-validation-for="To" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Get all Alcoholic Beds from which he escaped" class="btn btn-primary" />
+        </div>
+    </fieldset>
+</form>
+
+<form asp-action="GetAlcoholicsTimesPutInBed">
+    <fieldset>
+        <div class="form-group">
+            <label asp-for="Times" class="control-label"></label>
+            <input value="0" asp-for="@Model.Times" class="form-control" />
+            <span asp-validation-for="Times" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="From" class="control-label"></label>
+            <input value="" asp-for="@Model.From" class="form-control" />
+            <span asp-validation-for="From" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="To" class="control-label"></label>
+            <input value="" asp-for="@Model.To" class="form-control" />
+            <span asp-validation-for="To" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Get all Alcoholics who were put in bed at least N times" class="btn btn-primary" />
+        </div>
+    </fieldset>
+</form>
+
+<form asp-action="GetAllPairsForInspectorAndAlcoholic">
+    <fieldset>
+        <div class="form-group">
+            <label asp-for="AlcoholicId" class="control-label"></label>
+            <input value="0" asp-for="@Model.AlcoholicId" class="form-control" />
+            <span asp-validation-for="AlcoholicId" class="text-danger"></span>
+        </div>
+          <div class="form-group">
+            <label asp-for="InspectorId" class="control-label"></label>
+            <input value="0" asp-for="@Model.InspectorId" class="form-control" />
+            <span asp-validation-for="InspectorId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="From" class="control-label"></label>
+            <input value="" asp-for="@Model.From" class="form-control" />
+            <span asp-validation-for="From" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="To" class="control-label"></label>
+            <input value="" asp-for="@Model.To" class="form-control" />
+            <span asp-validation-for="To" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Get all history for Alcoholic and Inspector" class="btn btn-primary" />
+        </div>
+    </fieldset>
+</form>
+
+<form asp-action="EscapedTotalByMonth">
+    <fieldset>
+        <div class="form-group">
+            <input type="submit" value="Get escaped alcoholics in each month" class="btn btn-primary" />
+        </div>
+    </fieldset>
+</form>
+
+
+<form asp-action="GetInspectorsReleasedLessThenPutToBed">
+    <fieldset>
+        <div class="form-group">
+            <label asp-for="AlcoholicId" class="control-label"></label>
+            <input value="0" asp-for="@Model.AlcoholicId" class="form-control" />
+            <span asp-validation-for="AlcoholicId" class="text-danger"></span>
+        </div>
+        
+       
+        <div class="form-group">
+            <input type="submit" value="Released less then put him to bed" class="btn btn-primary" />
+        </div>
+    </fieldset>
+</form>

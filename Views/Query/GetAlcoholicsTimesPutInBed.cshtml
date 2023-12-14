@@ -1,4 +1,12 @@
-﻿<table class="table">
+﻿@model IEnumerable<Sanatorium.Person>
+
+@{
+    ViewData["Title"] = "GetAlcoholicsTimesPutInBed";
+}
+
+<h1>Get all Alcoholics who were put in bed at least N times</h1>
+
+<table class="table">
     <thead>
         <tr>
             <th scope="col">ID</th>
@@ -36,16 +44,16 @@
                     @person.Password
                 </td>
                 <td>
-                    <a class="btn btn-primary" asp-controller="Inspector" asp-action="Update" asp-route-myParam="@person.Id">Update</a>
+                    <a class="btn btn-primary" asp-controller="Alcoholic" asp-action="Update" asp-route-myParam="@person.Id">Update</a>
                 </td>
                 <td>
-                    <a class="btn btn-primary" asp-controller="Inspector" asp-action="Delete" asp-route-id="@person.Id">Delete</a>
+                    <a class="btn btn-primary" asp-controller="Alcoholic" asp-action="Delete" asp-route-id="@person.Id">Delete</a>
                 </td>
             </tr>
         }
-          <tr>
+        <tr>
             <td>
-                 <a class="btn btn-success" asp-controller="Inspector" asp-action="Add">Add</a>
+                 <a class="btn btn-success" asp-controller="Alcoholic" asp-action="Add">Add</a>
             </td>
         </tr>
     </tbody>

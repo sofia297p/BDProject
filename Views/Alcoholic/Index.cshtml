@@ -15,35 +15,40 @@
     <tbody>
         @foreach (Person person in Model)
         {
-                <tr>
-                    <td>
+            <tr>
+                <td>
                     @person.Id
-                    </td>
-                    <td>
+                </td>
+                <td>
                     @person.Name
-                    </td>
-                       <td>
+                </td>
+                <td>
                     @person.Surname
-                        </td>
-                        <td>
+                </td>
+                <td>
                     @person.Birthdate
-                        </td>
-                            <td>
+                </td>
+                <td>
                     @person.Sex
-                        </td>
-                        <td>
+                </td>
+                <td>
                     @person.Email
-                        </td>
-                               <td>
+                </td>
+                <td>
                     @person.Password
-                            </td>
-                       <td>
-                            <a class="btn btn-primary" asp-controller="Alcoholic" asp-action="Update" asp-route-myParam="@person.Id">Update</a>
-                    </td>
-                         <td>
-                                <a class="btn btn-primary" asp-controller="Alcoholic" asp-action="Delete" asp-route-id="@person.Id">Delete</a>
-                    </td>
-                </tr>
+                </td>
+                <td>
+                    <a class="btn btn-primary" asp-controller="Alcoholic" asp-action="Update" asp-route-myParam="@person.Id">Update</a>
+                </td>
+                <td>
+                    <a class="btn btn-primary" asp-controller="Alcoholic" asp-action="Delete" asp-route-id="@person.Id">Delete</a>
+                </td>
+            </tr>
         }
+        <tr>
+            <td>
+                 <a class="btn btn-success" asp-controller="Alcoholic" asp-action="Add">Add</a>
+            </td>
+        </tr>
     </tbody>
 </table>

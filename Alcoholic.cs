@@ -8,7 +8,6 @@ namespace Sanatorium
         public Alcoholic()
         {
             AlcoholicInspectors = new HashSet<AlcoholicInspector>();
-            EscapeFromBeds = new HashSet<EscapeFromBed>();
             GroupAlcoholics = new HashSet<GroupAlcoholic>();
         }
 
@@ -18,7 +17,6 @@ namespace Sanatorium
 
         public virtual Person? User { get; set; }
         public virtual ICollection<AlcoholicInspector> AlcoholicInspectors { get; set; }
-        public virtual ICollection<EscapeFromBed> EscapeFromBeds { get; set; }
         public virtual ICollection<GroupAlcoholic> GroupAlcoholics { get; set; }
     }
 }
