@@ -67,5 +67,53 @@ namespace Sanatorium.Controllers
             _db.SaveChanges();
             return RedirectToAction(nameof(Index));
         }
+
+      
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        public IActionResult Create(Person person)
+        {
+            _db.People.Add(person);
+            
+            _db.SaveChanges();
+            var alcoholic = new Alcoholic
+            {
+               
+                UserId = person.Id,
+                Consciousness = true
+            };
+
+           
+            _db.Alcoholics.Add(alcoholic);
+            _db.SaveChanges();
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Delete(int id)
+        {
+            var person = _db.People.FirstOrDefault(c => c.Id == id);
+            return View(person);
+        }
+
+        [HttpPost]
+        public IActionResult DeleteConfirmed(int id)
+        {
+            var person = _db.People.FirstOrDefault(c => c.Id == id);
+
+            // Видалення пов'язаних записів в таблиці "alcoholic"
+            var alcoholics = _db.Alcoholics.Where(a => a.UserId == id);
+            _db.Alcoholics.RemoveRange(alcoholics);
+
+            // Видалення запису "person"
+            _db.People.Remove(person);
+            _db.SaveChanges();
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

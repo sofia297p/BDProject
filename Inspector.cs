@@ -12,7 +12,6 @@ namespace Sanatorium
 
         public int Id { get; set; }
         public int? UserId { get; set; }
-
         public virtual Person? User { get; set; }
         public virtual ICollection<AlcoholicInspector> AlcoholicInspectors { get; set; }
     }

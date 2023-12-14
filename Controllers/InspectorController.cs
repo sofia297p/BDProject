@@ -10,11 +10,12 @@ namespace Sanatorium.Controllers
     {
         private readonly sanatoriumContext _db;
 
-
+        
         public InspectorController(sanatoriumContext db)
         {
             _db = db;
         }
+        [HttpGet]
 
         [HttpGet]
         public IActionResult Index()
@@ -24,7 +25,7 @@ namespace Sanatorium.Controllers
                          select person;
 
             List<Person> inspertors = result.ToList();
-            
+
             return View(inspertors);
         }
 
@@ -42,7 +43,7 @@ namespace Sanatorium.Controllers
             _db.SaveChanges();
             return RedirectToAction(nameof(Index));
         }
-
+        
         public IActionResult Add()
         {
             var person = new Person();
@@ -53,6 +54,7 @@ namespace Sanatorium.Controllers
         public IActionResult Add(Person person)
         {
             _db.People.Add(person);
+
             _db.SaveChanges();
             _db.Inspectors.Add(new Inspector() { UserId = person.Id });
             _db.SaveChanges();
@@ -71,7 +73,11 @@ namespace Sanatorium.Controllers
             _db.SaveChanges();
             _db.People.Remove(person);
             _db.SaveChanges();
+
             return RedirectToAction(nameof(Index));
         }
+
+
     }
 }
+
